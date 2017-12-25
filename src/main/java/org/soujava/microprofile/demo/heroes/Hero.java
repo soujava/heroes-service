@@ -5,7 +5,6 @@ import org.jnosql.artemis.Entity;
 import org.jnosql.artemis.Id;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 
@@ -24,31 +23,6 @@ public class Hero implements Serializable {
 
     @Column
     private Set<String> powers;
-
-    Hero() {
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public Set<String> getPowers() {
-        if (powers == null) {
-            return Collections.emptySet();
-        }
-        return Collections.unmodifiableSet(powers);
-    }
-
 
     @Override
     public boolean equals(Object o) {
