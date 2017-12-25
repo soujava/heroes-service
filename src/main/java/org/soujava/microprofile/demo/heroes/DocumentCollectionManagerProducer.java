@@ -2,9 +2,9 @@ package org.soujava.microprofile.demo.heroes;
 
 
 import org.jnosql.diana.api.Settings;
-import org.jnosql.diana.api.SettingsBuilder;
 import org.jnosql.diana.api.document.DocumentCollectionManager;
 import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
+import org.jnosql.diana.api.document.DocumentConfiguration;
 import org.jnosql.diana.couchbase.document.CouchbaseDocumentConfiguration;
 
 import javax.annotation.PostConstruct;
@@ -18,9 +18,10 @@ public class DocumentCollectionManagerProducer {
     private static final String DOCUMENT_COLLECTION = "heroes";
 
     private DocumentCollectionManager entityManager;
+
     @PostConstruct
     public void setUp() {
-        CouchbaseDocumentConfiguration configuration = new CouchbaseDocumentConfiguration();
+        DocumentConfiguration<?> configuration = new CouchbaseDocumentConfiguration();
         Settings settings = Settings.builder()
                 .put("couchbase-host-1", "localhost")
                 .put("couchbase-user", "root")

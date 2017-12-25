@@ -44,7 +44,7 @@ public class HeroResource {
     @GET
     @Path("/{id}")
     public Hero findById(@PathParam("id") String id) {
-        return repository.findByName(id).orElseThrow(NOT_FOUND);
+        return repository.findById(id).orElseThrow(NOT_FOUND);
     }
 
     @GET
@@ -74,6 +74,6 @@ public class HeroResource {
     @Path("/{id}")
     @DELETE
     public void delete(@PathParam("id") String name) {
-        repository.deleteByName(name);
+        repository.deleteById(name);
     }
 }

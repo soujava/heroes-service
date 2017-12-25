@@ -12,10 +12,8 @@ import java.util.Set;
 @Entity
 public class Hero implements Serializable {
 
-    @Id
-    private String id;
 
-    @Column
+    @Id
     private String name;
 
     @Column
@@ -30,13 +28,6 @@ public class Hero implements Serializable {
     Hero() {
     }
 
-    Hero(String name, String realName, Integer age, Set<String> powers) {
-        this.id = name;
-        this.name = name;
-        this.realName = realName;
-        this.age = age;
-        this.powers = powers;
-    }
 
 
     public String getName() {
@@ -58,9 +49,6 @@ public class Hero implements Serializable {
         return Collections.unmodifiableSet(powers);
     }
 
-    public static HeroBuilder builder() {
-        return new HeroBuilder();
-    }
 
     @Override
     public boolean equals(Object o) {
