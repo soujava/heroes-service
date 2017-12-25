@@ -26,7 +26,7 @@ public class DocumentCollectionManagerProducer {
                 .put("couchbase-host-1", "localhost")
                 .put("couchbase-user", "root")
                 .put("couchbase-password", "123456").build();
-        DocumentCollectionManagerFactory managerFactory = configuration.get(settings);
+        DocumentCollectionManagerFactory<?> managerFactory = configuration.get(settings);
         entityManager = managerFactory.get(DOCUMENT_COLLECTION);
     }
 
